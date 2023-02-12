@@ -20,8 +20,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class WmChannelServiceImpl extends ServiceImpl<WmChannelMapper, WmChannel> implements WmChannelService {
 
 
-
-
     /**
      * 查询所有频道列表
      * @return

@@ -14,4 +14,8 @@ public class ArticleConstants {
 
     public static final String HOT_ARTICLE_FIRST_PAGE = "hot_article_first_page_";
 
+    // 收藏类型
+    public static final Short ARTICLE_COLLECTION = 0; // 文章
+    public static final Short MOVING_COLLECTION = 1; // 动态
+
 }

@@ -9,7 +9,7 @@ import java.util.*;
 public class AppJwtUtil {
 
     // TOKEN的有效期一天（S）
-    private static final int TOKEN_TIME_OUT = 3_600;
+    private static final int TOKEN_TIME_OUT = 24 * 60 * 60;
     // 加密KEY
     private static final String TOKEN_ENCRY_KEY = "MDk4ZjZiY2Q0NjIxZDM3M2NhZGU0ZTgzMjYyN2I0ZjY";
     // 最小刷新间隔(S)
@@ -76,6 +76,7 @@ public class AppJwtUtil {
      * @return -1：有效，0：有效，1：过期，2：过期
      */
     public static int verifyToken(Claims claims) {
+        System.out.println("expire-time = " + claims.getExpiration());
         if(claims==null){
             return 1;
         }
@@ -84,6 +85,7 @@ public class AppJwtUtil {
                     .before(new Date());
             // 需要自动刷新TOKEN
             if((claims.getExpiration().getTime()-System.currentTimeMillis())>REFRESH_TIME*1000){
+
                 return -1;
             }else {
                 return 0;

@@ -28,7 +28,11 @@ public enum AppHttpCodeEnum {
     NEED_ADMIND(3001,"需要管理员权限"),
 
     // 自媒体文章错误 3501~3600
-    MATERIASL_REFERENCE_FAIL(3501,"素材引用失效");
+    MATERIASL_REFERENCE_FAIL(3501,"素材引用失效"),
+
+    // 平台管理系统
+    NOT_FOUNT(404, "NOT_FOUND,用户不存在"),
+    FORBIDDEN(403, "Forbidden,用户禁止登录");
 
 
     int code;
